@@ -29,11 +29,13 @@ module tmds_encoder (
   
   always_comb begin
 	if (disparity == 0 || qm_balance == 0) begin
-		q_encoded = {~q_m[8], q_m[8], q_m[7:0]};
+    //balanced, send as is
+		q_encoded = {1'b0, q_m[8], q_m[7:0]};
 		next_disparity = disparity + qm_balance;
 	end
 	else if ((disparity < 0 && qm_balance < 0) || (disparity > 0 && qm_balance > 0)) begin
-		q_encoded = {1'b1, q_m[8], ~q_m[7:0]};
+		//invert
+    q_encoded = {1'b1, q_m[8], ~q_m[7:0]};
 		next_disparity = disparity - qm_balance;
 	end
 	else begin
@@ -43,7 +45,7 @@ module tmds_encoder (
   end
 
   always_ff @(posedge clk) begin
-	if (rst || blank) disparity <= '0';
+	if (rst || blank) disparity <= 0;
 	else disparity <= next_disparity;
   end
 
