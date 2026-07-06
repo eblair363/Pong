@@ -1,18 +1,19 @@
-# Vivado generated
+# Vivado generated (pong.* project)
+pong.cache/
+pong.hw/
+pong.ip_user_files/
+pong.runs/
+pong.sim/
+
+# keep IP definition, ignore its generated output
+pong.gen/
+!pong.srcs/
+
+# logs / journals / reports / bitstreams
 *.jou
 *.log
 *.str
-.Xil/
-*.cache/
-*.hw/
-*.ip_user_files/
-*.runs/
-*.sim/
-*.srcs/sources_1/ip/*/*.xml
-vivado*.backup.jou
-vivado*.backup.log
-
-# Bitstreams / reports
+*.rpt
 *.bit
 *.ltx
-*.rpt
+.Xil/
