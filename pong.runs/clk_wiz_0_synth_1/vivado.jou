@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Jun 30 18:26:28 2026
+# Process ID         : 19360
+# Current directory  : /home/eb/dev/vivado/pong/pong.runs/clk_wiz_0_synth_1
+# Command line       : vivado -log clk_wiz_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_wiz_0.tcl
+# Log file           : /home/eb/dev/vivado/pong/pong.runs/clk_wiz_0_synth_1/clk_wiz_0.vds
+# Journal file       : /home/eb/dev/vivado/pong/pong.runs/clk_wiz_0_synth_1/vivado.jou
+# Running On         : nucleus
+# Platform           : unknown
+# Operating System   : unknown
+# Processor Detail   : Intel(R) Core(TM) i5-8500T CPU @ 2.10GHz
+# CPU Frequency      : 3300.019 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 6
+# Host memory        : 16527 MB
+# Swap memory        : 20821 MB
+# Total Virtual      : 37348 MB
+# Available Virtual  : 32130 MB
+#-----------------------------------------------------------
+source clk_wiz_0.tcl -notrace

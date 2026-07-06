@@ -1,0 +1,333 @@
+
+*** Running vivado
+    with args -log toplevel.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source toplevel.tcl
+
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Mon Jul  6 07:24:51 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source toplevel.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental /home/eb/dev/vivado/pong/pong.srcs/utils_1/imports/synth_1/test.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/eb/dev/vivado/pong/pong.srcs/utils_1/imports/synth_1/test.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top toplevel -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 26842
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2240.809 ; gain = 483.594 ; free physical = 1018 ; free virtual = 25336
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-9339] data object 'locked_internal' is already declared [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:38]
+INFO: [Synth 8-6826] previous declaration of 'locked_internal' is from here [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:35]
+CRITICAL WARNING: [Synth 8-11152] second declaration of 'locked_internal' is ignored [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:38]
+CRITICAL WARNING: [Synth 8-9339] data object 'blank_internal' is already declared [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:40]
+INFO: [Synth 8-6826] previous declaration of 'blank_internal' is from here [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:35]
+CRITICAL WARNING: [Synth 8-11152] second declaration of 'blank_internal' is ignored [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:40]
+CRITICAL WARNING: [Synth 8-9339] data object 'ctrl_internal' is already declared [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:41]
+INFO: [Synth 8-6826] previous declaration of 'ctrl_internal' is from here [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:34]
+CRITICAL WARNING: [Synth 8-11152] second declaration of 'ctrl_internal' is ignored [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:41]
+CRITICAL WARNING: [Synth 8-9339] data object 'r_internal' is already declared [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:42]
+INFO: [Synth 8-6826] previous declaration of 'r_internal' is from here [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:33]
+CRITICAL WARNING: [Synth 8-11152] second declaration of 'r_internal' is ignored [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:42]
+CRITICAL WARNING: [Synth 8-9339] data object 'g_internal' is already declared [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:42]
+INFO: [Synth 8-6826] previous declaration of 'g_internal' is from here [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:33]
+CRITICAL WARNING: [Synth 8-11152] second declaration of 'g_internal' is ignored [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:42]
+CRITICAL WARNING: [Synth 8-9339] data object 'b_internal' is already declared [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:42]
+INFO: [Synth 8-6826] previous declaration of 'b_internal' is from here [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:33]
+CRITICAL WARNING: [Synth 8-11152] second declaration of 'b_internal' is ignored [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:42]
+CRITICAL WARNING: [Synth 8-9339] data object 'tmds_out_red' is already declared [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:43]
+INFO: [Synth 8-6826] previous declaration of 'tmds_out_red' is from here [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:32]
+CRITICAL WARNING: [Synth 8-11152] second declaration of 'tmds_out_red' is ignored [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:43]
+CRITICAL WARNING: [Synth 8-9339] data object 'tmds_out_green' is already declared [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:43]
+INFO: [Synth 8-6826] previous declaration of 'tmds_out_green' is from here [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:32]
+CRITICAL WARNING: [Synth 8-11152] second declaration of 'tmds_out_green' is ignored [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:43]
+CRITICAL WARNING: [Synth 8-9339] data object 'tmds_out_blue' is already declared [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:43]
+INFO: [Synth 8-6826] previous declaration of 'tmds_out_blue' is from here [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:32]
+CRITICAL WARNING: [Synth 8-11152] second declaration of 'tmds_out_blue' is ignored [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:43]
+INFO: [Synth 8-6157] synthesizing module 'toplevel' [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/eb/dev/vivado/pong/pong.runs/synth_1/.Xil/Vivado-26810-nucleus/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [/home/eb/dev/vivado/pong/pong.runs/synth_1/.Xil/Vivado-26810-nucleus/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'clk_divider' [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/clk_divider.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'clk_divider' (0#1) [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/clk_divider.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'tmds_encoder' [/home/eb/dev/Pong/rtl/tmds_encoder.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'tmds_encoder' (0#1) [/home/eb/dev/Pong/rtl/tmds_encoder.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'serializer_10to1' [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/serializer_10to1.v:23]
+INFO: [Synth 8-6157] synthesizing module 'OSERDESE2' [/opt/Xilinx/2025.2/Vivado/scripts/rt/data/unisim_comp.v:117832]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: SDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter INIT_OQ bound to: 1'b0 
+	Parameter INIT_TQ bound to: 1'b0 
+	Parameter SERDES_MODE bound to: MASTER - type: string 
+	Parameter SRVAL_OQ bound to: 1'b0 
+	Parameter SRVAL_TQ bound to: 1'b0 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'OSERDESE2' (0#1) [/opt/Xilinx/2025.2/Vivado/scripts/rt/data/unisim_comp.v:117832]
+INFO: [Synth 8-6157] synthesizing module 'OSERDESE2__parameterized0' [/opt/Xilinx/2025.2/Vivado/scripts/rt/data/unisim_comp.v:117832]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: SDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter INIT_OQ bound to: 1'b0 
+	Parameter INIT_TQ bound to: 1'b0 
+	Parameter SERDES_MODE bound to: SLAVE - type: string 
+	Parameter SRVAL_OQ bound to: 1'b0 
+	Parameter SRVAL_TQ bound to: 1'b0 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'OSERDESE2__parameterized0' (0#1) [/opt/Xilinx/2025.2/Vivado/scripts/rt/data/unisim_comp.v:117832]
+INFO: [Synth 8-6155] done synthesizing module 'serializer_10to1' (0#1) [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/serializer_10to1.v:23]
+INFO: [Synth 8-6157] synthesizing module 'obuffer' [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/obuffer.v:23]
+INFO: [Synth 8-6157] synthesizing module 'OBUFDS' [/opt/Xilinx/2025.2/Vivado/scripts/rt/data/unisim_comp.v:113534]
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'OBUFDS' (0#1) [/opt/Xilinx/2025.2/Vivado/scripts/rt/data/unisim_comp.v:113534]
+INFO: [Synth 8-6155] done synthesizing module 'obuffer' (0#1) [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/obuffer.v:23]
+INFO: [Synth 8-6157] synthesizing module 'videoGen' [/home/eb/dev/vivado/pong/pong.srcs/sources_1/imports/rtl/videogen.sv:9]
+INFO: [Synth 8-6155] done synthesizing module 'videoGen' (0#1) [/home/eb/dev/vivado/pong/pong.srcs/sources_1/imports/rtl/videogen.sv:9]
+INFO: [Synth 8-6155] done synthesizing module 'toplevel' (0#1) [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:23]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_clk_wiz_0'. This will prevent further optimization [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:47]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_clk_divider'. This will prevent further optimization [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:55]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_videogen'. This will prevent further optimization [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:156]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_tmds_encoder_blue'. This will prevent further optimization [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:80]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_tmds_encoder_green'. This will prevent further optimization [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:71]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_tmds_encoder_red'. This will prevent further optimization [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:62]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_serializer_10to1_red'. This will prevent further optimization [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:89]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_serializer_10to1_green'. This will prevent further optimization [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:97]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_serializer_10to1_blue'. This will prevent further optimization [/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/toplevel.sv:105]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2328.746 ; gain = 571.531 ; free physical = 898 ; free virtual = 25234
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2343.590 ; gain = 586.375 ; free physical = 898 ; free virtual = 25235
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2343.590 ; gain = 586.375 ; free physical = 898 ; free virtual = 25235
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2349.527 ; gain = 0.000 ; free physical = 907 ; free virtual = 25228
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/eb/dev/vivado/pong/pong.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'u_clk_wiz_0'
+Finished Parsing XDC File [/home/eb/dev/vivado/pong/pong.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'u_clk_wiz_0'
+Parsing XDC File [/home/eb/dev/vivado/pong/pong.srcs/constrs_1/new/clk_divider.xdc]
+Finished Parsing XDC File [/home/eb/dev/vivado/pong/pong.srcs/constrs_1/new/clk_divider.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/eb/dev/vivado/pong/pong.srcs/constrs_1/new/clk_divider.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/toplevel_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/toplevel_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2454.328 ; gain = 0.000 ; free physical = 903 ; free virtual = 25224
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 4 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2454.363 ; gain = 0.000 ; free physical = 903 ; free virtual = 25223
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2454.363 ; gain = 697.148 ; free physical = 903 ; free virtual = 25224
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2462.332 ; gain = 705.117 ; free physical = 903 ; free virtual = 25224
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2462.332 ; gain = 705.117 ; free physical = 903 ; free virtual = 25224
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2462.332 ; gain = 705.117 ; free physical = 903 ; free virtual = 25225
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   11 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 3     
+	   4 Input    5 Bit       Adders := 6     
+	   3 Input    5 Bit       Adders := 3     
+	   8 Input    4 Bit       Adders := 6     
++---XORs : 
+	   2 Input      1 Bit         XORs := 42    
++---Registers : 
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                5 Bit    Registers := 3     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input   10 Bit        Muxes := 12    
+	   4 Input   10 Bit        Muxes := 3     
+	   2 Input    8 Bit        Muxes := 3     
+	   8 Input    8 Bit        Muxes := 3     
+	   2 Input    5 Bit        Muxes := 9     
+	   2 Input    4 Bit        Muxes := 3     
+	   2 Input    3 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 23    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2462.332 ; gain = 705.117 ; free physical = 888 ; free virtual = 25216
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2521.332 ; gain = 764.117 ; free physical = 766 ; free virtual = 25110
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2551.379 ; gain = 794.164 ; free physical = 735 ; free virtual = 25080
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2551.379 ; gain = 794.164 ; free physical = 735 ; free virtual = 25080
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2721.191 ; gain = 963.977 ; free physical = 632 ; free virtual = 24960
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2721.191 ; gain = 963.977 ; free physical = 632 ; free virtual = 24960
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2721.191 ; gain = 963.977 ; free physical = 632 ; free virtual = 24960
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2721.191 ; gain = 963.977 ; free physical = 632 ; free virtual = 24960
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2721.191 ; gain = 963.977 ; free physical = 632 ; free virtual = 24960
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2721.191 ; gain = 963.977 ; free physical = 632 ; free virtual = 24960
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |clk_wiz   |     1|
+|2     |CARRY4    |    13|
+|3     |LUT1      |     7|
+|4     |LUT2      |    31|
+|5     |LUT3      |    39|
+|6     |LUT4      |    33|
+|7     |LUT5      |    62|
+|8     |LUT6      |    83|
+|9     |OSERDESE2 |     8|
+|11    |FDRE      |    71|
+|12    |IBUF      |     1|
+|13    |OBUF      |     2|
+|14    |OBUFDS    |     4|
++------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2721.191 ; gain = 963.977 ; free physical = 632 ; free virtual = 24960
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 2721.191 ; gain = 853.203 ; free physical = 631 ; free virtual = 24959
+Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 2721.199 ; gain = 963.977 ; free physical = 631 ; free virtual = 24959
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2721.199 ; gain = 0.000 ; free physical = 631 ; free virtual = 24959
+INFO: [Netlist 29-17] Analyzing 17 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2761.211 ; gain = 0.000 ; free physical = 798 ; free virtual = 25126
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 4 instances
+
+Synth Design complete | Checksum: c90cf0ff
+INFO: [Common 17-83] Releasing license: Synthesis
+61 Infos, 0 Warnings, 18 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:38 . Memory (MB): peak = 2761.246 ; gain = 1195.578 ; free physical = 796 ; free virtual = 25125
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2042.011; main = 1854.365; forked = 283.865
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3649.758; main = 2761.215; forked = 989.375
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2785.223 ; gain = 0.000 ; free physical = 796 ; free virtual = 25125
+INFO: [Common 17-1381] The checkpoint '/home/eb/dev/vivado/pong/pong.runs/synth_1/toplevel.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file toplevel_utilization_synth.rpt -pb toplevel_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Jul  6 07:25:35 2026...

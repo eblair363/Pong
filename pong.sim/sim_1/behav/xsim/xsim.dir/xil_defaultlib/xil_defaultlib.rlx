@@ -1,0 +1,7 @@
+0.7
+2020.2
+Nov 14 2025
+12:36:23
+/home/eb/dev/vivado/pong/pong.sim/sim_1/behav/xsim/glbl.v,1756381829,verilog,,,,glbl,,uvm,,,,,,
+/home/eb/dev/vivado/pong/pong.srcs/sim_1/new/serializer_tb.sv,1782770764,systemVerilog,,,,serializer_tb,,uvm,../../../../../../../../../opt/Xilinx/2025.2/data/rsb/busdef;../../../../pong.ip_user_files/ipstatic,,,,,
+/home/eb/dev/vivado/pong/pong.srcs/sources_1/new/serializer_10to1.v,1782770753,verilog,,,,serializer_10to1,,uvm,../../../../../../../../../opt/Xilinx/2025.2/data/rsb/busdef;../../../../pong.ip_user_files/ipstatic,,,,,

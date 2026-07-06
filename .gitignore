@@ -1,47 +1,18 @@
-# Vivado
+# Vivado generated
 *.jou
 *.log
 *.str
-*.pb
-*.wdb
-*.wcfg
 .Xil/
 *.cache/
 *.hw/
 *.ip_user_files/
 *.runs/
 *.sim/
-*.srcs/
-*.gen/
-vivado_*.backup.*
-webtalk_*.backup.*
-usage_statistics_webtalk.*
+*.srcs/sources_1/ip/*/*.xml
+vivado*.backup.jou
+vivado*.backup.log
 
-# Vivado project files — regenerate from TCL
-*.xpr
-*.xpe
-
-# Bitstreams and reports (regeneratable)
+# Bitstreams / reports
 *.bit
-*.bin
 *.ltx
-*.mcs
-*.prm
-reports/
-
-# Verilator
-obj_dir/
-*.vcd
-*.fst
-*.ghw
-
-# Build artifacts
-build/
-work/
-
-# Editor
-*.swp
-.vscode/
-.idea/
-.DS_Store
-**/.DS_Store
+*.rpt
