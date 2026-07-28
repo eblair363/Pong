@@ -21,7 +21,7 @@
 
 
 module toplevel(
-    input mmcmclk, rst,
+    input mmcmclk, rst, //sw_test,
     output led0,
     output led1,
     output [2:0] tmds_data_p, tmds_data_n,
@@ -32,17 +32,40 @@ module toplevel(
     (* mark_debug = "true" *) logic [9:0] tmds_out_blue, tmds_out_green, tmds_out_red;
     (* mark_debug = "true" *) logic [7:0] r_internal, g_internal, b_internal;
     (* mark_debug = "true" *) logic [1:0] ctrl_internal;
-    (* mark_debug = "true" *) logic       blank_internal, locked_internal;
+    (* mark_debug = "true" *) logic blank_internal, locked_internal;
     (* keep = "true" *) reg [9:0] tmds_constant;
+    
+    localparam int PADDLE_WIDTH = 16;
+    localparam int PADDLE_HEIGHT = 96;
     
     wire locked_internal;
     wire pixclk_internal, sysclk_internal;
     wire clk_rst, serdes_out_1, serdes_out_2, serdes_out_3, blank_internal, tmdsclk_internal;
     wire [1:0] ctrl_internal;
     wire [7:0] r_internal,g_internal,b_internal;
-    wire [9:0] tmds_out_red, tmds_out_green, tmds_out_blue;
+    wire [9:0] tmds_out_red, tmds_out_green, tmds_out_blue, beam_y_internal;
+    wire [10:0] beam_x_internal;
+
+    
+    wire [7:0] r_game, g_game, b_game;
+    wire [7:0] r_test, g_test, b_test;
     
     assign clk_rst = rst | ~locked_internal;
+//    assign r_internal = sw_test ? r_test : r_game;
+//    assign g_internal = sw_test ? g_test : g_game;
+//    assign b_internal = sw_test ? b_test : b_game;
+    
+    gameRenderer u_game_renderer (
+        .beam_x (beam_x_internal), .beam_y (beam_y_internal), .blank (blank_internal),
+        .ball_x (11'd632), .ball_y (10'd352),
+        .lpad_y (10'd312), .rpad_y (10'd312),
+        .r (r_internal), .g (g_internal), .b (b_internal)
+    );
+    
+    testPattern u_test_pattern (
+        .beam_x (beam_x_internal), .beam_y (beam_y_internal), .blank (blank_internal),
+        .r (r_test), .g (g_test), .b (b_test)
+    );
     
     clk_wiz_0 u_clk_wiz_0 (
         .clk_in1    (mmcmclk),
@@ -153,16 +176,16 @@ module toplevel(
 //    .O (debug_clk_serial)
 //    );
     
-    videoGen u_videogen (
-        .pixclk (pixclk_internal),
-        .rst    (clk_rst),
-        .hsync  (ctrl_internal[0]),
-        .vsync  (ctrl_internal[1]),
-        .r      (r_internal),
-        .g      (g_internal),
-        .b      (b_internal),
-        .blank  (blank_internal)
-    );
+    videoGen u_videoGen (
+    .pixclk     (pixclk_internal),
+    .rst        (clk_rst),
+    .hsync      (ctrl_internal[0]),
+    .vsync      (ctrl_internal[1]),
+    .beam_x     (beam_x_internal),
+    .beam_y     (beam_y_internal),
+    .blank      (blank_internal),
+    .frame_tick ()
+);
     
     
 endmodule

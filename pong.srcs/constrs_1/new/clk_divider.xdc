@@ -21,6 +21,9 @@ set_property -dict {PACKAGE_PIN B19 IOSTANDARD TMDS_33} [get_ports {tmds_data_p[
 #Buttons
 set_property -dict {PACKAGE_PIN K18 IOSTANDARD LVCMOS33} [get_ports rst]
 
+#Switches
+#set_property -dict { PACKAGE_PIN G15   IOSTANDARD LVCMOS33 } [get_ports { sw_test }]; #IO_L19N_T3_VREF_35 Sch=sw[0]
+
 create_debug_core u_ila_0 ila
 set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_0]
 set_property ALL_PROBE_SAME_MU_CNT 2 [get_debug_cores u_ila_0]
