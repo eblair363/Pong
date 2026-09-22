@@ -17,3 +17,7 @@ pong.gen/
 *.bit
 *.ltx
 .Xil/
+
+# Claude Code working docs, not part of the project deliverable
+CLAUDE.md
+LEARN.md
