@@ -22,46 +22,74 @@
 
 module toplevel(
     input mmcmclk, rst, //sw_test,
+    input btn_l_up, btn_l_down, btn_r_up, btn_r_down,
     output led0,
     output led1,
+    output led2,
     output [2:0] tmds_data_p, tmds_data_n,
     output tmds_clk_p, tmds_clk_n
     //output debug_clk_serial
     );
-    
+
     (* mark_debug = "true" *) logic [9:0] tmds_out_blue, tmds_out_green, tmds_out_red;
     (* mark_debug = "true" *) logic [7:0] r_internal, g_internal, b_internal;
     (* mark_debug = "true" *) logic [1:0] ctrl_internal;
     (* mark_debug = "true" *) logic blank_internal, locked_internal;
     (* keep = "true" *) reg [9:0] tmds_constant;
-    
-    localparam int PADDLE_WIDTH = 16;
-    localparam int PADDLE_HEIGHT = 96;
-    
-    wire locked_internal;
-    wire pixclk_internal, sysclk_internal;
-    wire clk_rst, serdes_out_1, serdes_out_2, serdes_out_3, blank_internal, tmdsclk_internal;
-    wire [1:0] ctrl_internal;
-    wire [7:0] r_internal,g_internal,b_internal;
-    wire [9:0] tmds_out_red, tmds_out_green, tmds_out_blue, beam_y_internal;
-    wire [10:0] beam_x_internal;
 
-    
+    wire pixclk_internal, sysclk_internal;
+    wire clk_rst, serdes_out_1, serdes_out_2, serdes_out_3, tmdsclk_internal;
+    wire [9:0] beam_y_internal;
+    wire [10:0] beam_x_internal;
+    wire frame_tick_internal;
+
+    wire [3:0] btn_raw, btn_debounced;
+    wire [10:0] ball_x_internal;
+    wire [9:0]  ball_y_internal, lpad_y_internal, rpad_y_internal;
+    wire [2:0]  score_l_internal, score_r_internal, game_state_internal;
+
+    assign btn_raw   = {btn_l_up, btn_l_down, btn_r_up, btn_r_down};
+    assign led2      = (game_state_internal == 3'd3); // lit once ST_GAME_OVER is reached
+
     wire [7:0] r_game, g_game, b_game;
     wire [7:0] r_test, g_test, b_test;
-    
+
     assign clk_rst = rst | ~locked_internal;
 //    assign r_internal = sw_test ? r_test : r_game;
 //    assign g_internal = sw_test ? g_test : g_game;
 //    assign b_internal = sw_test ? b_test : b_game;
-    
+
+    button_debounce #(.WIDTH(4)) u_button_debounce (
+        .clk    (pixclk_internal),
+        .rst    (clk_rst),
+        .raw    (btn_raw),
+        .out    (btn_debounced)
+    );
+
+    gameLogic u_game_logic (
+        .pixclk     (pixclk_internal),
+        .rst        (clk_rst),
+        .frame_tick (frame_tick_internal),
+        .l_up       (btn_debounced[3]),
+        .l_down     (btn_debounced[2]),
+        .r_up       (btn_debounced[1]),
+        .r_down     (btn_debounced[0]),
+        .ball_x     (ball_x_internal),
+        .ball_y     (ball_y_internal),
+        .lpad_y     (lpad_y_internal),
+        .rpad_y     (rpad_y_internal),
+        .score_l    (score_l_internal),
+        .score_r    (score_r_internal),
+        .game_state (game_state_internal)
+    );
+
     gameRenderer u_game_renderer (
         .beam_x (beam_x_internal), .beam_y (beam_y_internal), .blank (blank_internal),
-        .ball_x (11'd632), .ball_y (10'd352),
-        .lpad_y (10'd312), .rpad_y (10'd312),
+        .ball_x (ball_x_internal), .ball_y (ball_y_internal),
+        .lpad_y (lpad_y_internal), .rpad_y (rpad_y_internal),
         .r (r_internal), .g (g_internal), .b (b_internal)
     );
-    
+
     testPattern u_test_pattern (
         .beam_x (beam_x_internal), .beam_y (beam_y_internal), .blank (blank_internal),
         .r (r_test), .g (g_test), .b (b_test)
@@ -184,7 +212,7 @@ module toplevel(
     .beam_x     (beam_x_internal),
     .beam_y     (beam_y_internal),
     .blank      (blank_internal),
-    .frame_tick ()
+    .frame_tick (frame_tick_internal)
 );
     
     

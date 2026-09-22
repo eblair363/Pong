@@ -1,6 +1,7 @@
 ##LEDs
 set_property -dict {PACKAGE_PIN M14 IOSTANDARD LVCMOS33} [get_ports led0]
 set_property -dict {PACKAGE_PIN M15 IOSTANDARD LVCMOS33} [get_ports led1]
+set_property -dict {PACKAGE_PIN G14 IOSTANDARD LVCMOS33} [get_ports led2]
 
 ##Clock signal
 set_property -dict {PACKAGE_PIN K17 IOSTANDARD LVCMOS33} [get_ports mmcmclk]
@@ -15,14 +16,19 @@ set_property -dict {PACKAGE_PIN C20 IOSTANDARD TMDS_33} [get_ports {tmds_data_p[
 set_property -dict {PACKAGE_PIN A20 IOSTANDARD TMDS_33} [get_ports {tmds_data_n[2]}]
 set_property -dict {PACKAGE_PIN B19 IOSTANDARD TMDS_33} [get_ports {tmds_data_p[2]}]
 
-###Pmod Header JE 
+###Pmod Header JE
 #set_property -dict { PACKAGE_PIN V12   IOSTANDARD LVCMOS33 } [get_ports { debug_clk_serial }]; #IO_L4P_T0_34 Sch=je[1]
 
-#Buttons
-set_property -dict {PACKAGE_PIN K18 IOSTANDARD LVCMOS33} [get_ports rst]
+#Buttons (Zybo Z7: BTN0=K18, BTN1=P16, BTN2=K19, BTN3=Y16 -- all now used for paddle
+# control since rst moved to a switch, freeing up all 4 for the 2 paddles x up/down)
+set_property -dict {PACKAGE_PIN K18 IOSTANDARD LVCMOS33} [get_ports btn_l_up]
+set_property -dict {PACKAGE_PIN P16 IOSTANDARD LVCMOS33} [get_ports btn_l_down]
+set_property -dict {PACKAGE_PIN K19 IOSTANDARD LVCMOS33} [get_ports btn_r_up]
+set_property -dict {PACKAGE_PIN Y16 IOSTANDARD LVCMOS33} [get_ports btn_r_down]
 
 #Switches
-#set_property -dict { PACKAGE_PIN G15   IOSTANDARD LVCMOS33 } [get_ports { sw_test }]; #IO_L19N_T3_VREF_35 Sch=sw[0]
+set_property -dict {PACKAGE_PIN G15 IOSTANDARD LVCMOS33} [get_ports rst]
+#set_property -dict { PACKAGE_PIN P15   IOSTANDARD LVCMOS33 } [get_ports { sw1 }]; #Sch=sw[1]
 
 create_debug_core u_ila_0 ila
 set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_0]
